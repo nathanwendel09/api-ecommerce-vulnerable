@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const app = express();
+app.disable('x-powered-by');
 app.use(express.json());
 app.get('/', (_req, res) => res.json({ project: 'E-commerce Lab', message: 'API de treinamento - usar somente em localhost', endpoints: ['/api/products', '/api/users', '/api/orders/1'] }));
 app.get('/health', (_req, res) => res.json({ status: 'ok' }));
